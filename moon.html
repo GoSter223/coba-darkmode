@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Switch Mode Warna</title>
+  <style>
+    body {
+    background-color: rgb(65, 187, 240);
+    color: #333;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 1s;
+    overflow: hidden;
+    }
+
+    svg {
+			vertical-align: middle;
+		}
+
+    .dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+    }
+
+    .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    }
+
+    .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+
+    .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+
+    .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+
+    input:checked + .slider {
+    background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    }
+
+    .slider.round {
+    border-radius: 34px;
+    }
+
+    .slider.round:before {
+    border-radius: 50%;
+    }
+
+    .hias {
+			position: absolute;
+		  z-index: -1;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		}
+    .hias2 {
+      position: absolute;
+			z-index: -1;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+      height: 500px;
+    }
+    .sun {
+      height: 270px;
+      width: 270px;
+      background-color: yellow;
+      border-radius: 50%;
+      position: absolute;
+      z-index: -2;
+      bottom: 300px;
+      left: 41%;
+      transition: 1s;
+    }
+    .sun2 {
+      height: 270px;
+      width: 270px;
+      background-color: yellow;
+      border-radius: 50%;
+      position: absolute;
+      z-index: -2;
+      bottom: -200px;
+      left: 41%;
+      transition: 1s;
+    }
+    .moon {
+      height: 270px;
+      width: 270px;
+      background-color: #ffff94;
+      border-radius: 50%;
+      position: absolute;
+      z-index: -3;
+      bottom: -200px;
+      left: 41%;
+      transition: 1s;
+    }
+    .moon2 {
+      height: 270px;
+      width: 270px;
+      background-color: #ffff94;
+      border-radius: 50%;
+      position: absolute;
+      z-index: -3;
+      bottom: 300px;
+      left: 41%;
+      transition: 1s;
+    }
+    .lob {
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      background-color: rgb(65, 187, 240);
+      margin-right: -150px;
+      margin-top: -50px;
+      transition: 1s;
+    }
+    .lob2 {
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      background-color: #333;
+      margin-right: -150px;
+      margin-top: -50px;
+      transition: 1s;
+    }
+  </style>
+</head>
+<body>
+  <center>
+  <h1>Ganti Mode Website</h1>
+
+  <label class="switch">
+    <input id="modeSwitch" type="checkbox">
+    <span class="slider round" onclick="return confirmDelete()"></span>
+  </label>
+  <div id="sun" class="sun"></div>
+  <div id="moon" class="moon">
+  <div id="lob" class="lob"></div>
+  </div>
+  </center>
+  <div class="hias">
+  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L17.1,202.7C34.3,181,69,139,103,133.3C137.1,128,171,160,206,154.7C240,149,274,107,309,90.7C342.9,75,377,85,411,117.3C445.7,149,480,203,514,197.3C548.6,192,583,128,617,96C651.4,64,686,64,720,69.3C754.3,75,789,85,823,106.7C857.1,128,891,160,926,176C960,192,994,192,1029,176C1062.9,160,1097,128,1131,128C1165.7,128,1200,160,1234,165.3C1268.6,171,1303,149,1337,128C1371.4,107,1406,85,1423,74.7L1440,64L1440,320L1422.9,320C1405.7,320,1371,320,1337,320C1302.9,320,1269,320,1234,320C1200,320,1166,320,1131,320C1097.1,320,1063,320,1029,320C994.3,320,960,320,926,320C891.4,320,857,320,823,320C788.6,320,754,320,720,320C685.7,320,651,320,617,320C582.9,320,549,320,514,320C480,320,446,320,411,320C377.1,320,343,320,309,320C274.3,320,240,320,206,320C171.4,320,137,320,103,320C68.6,320,34,320,17,320L0,320Z"></path></svg>
+</div>
+<div class="hias2">
+  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="0.7" d="M0,96L34.3,106.7C68.6,117,137,139,206,128C274.3,117,343,75,411,80C480,85,549,139,617,154.7C685.7,171,754,149,823,128C891.4,107,960,85,1029,106.7C1097.1,128,1166,192,1234,192C1302.9,192,1371,128,1406,96L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+</div>
+  <script>
+    function confirmDelete() {
+      if (confirm("Apakah anda yakin ingin mengganti mode website?")) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    const modeSwitch = document.getElementById('modeSwitch');
+    const sun = document.getElementById('sun');
+    const moon = document.getElementById('moon');
+    const lob = document.getElementById('lob');
+      modeSwitch.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode');
+      sun.classList.toggle('sun');
+      sun.classList.toggle('sun2');
+      moon.classList.toggle('moon');
+      moon.classList.toggle('moon2');
+      lob.classList.toggle('lob');
+      lob.classList.toggle('lob2');
+    });
+
+  </script>
+
+
+</body>
+</html>
